@@ -1,13 +1,17 @@
 using System;
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Events;
+using UnityEngine.Events; 
+
+
 
 public class Interactable : MonoBehaviour //gjord av edward
 {
     private static KeyCode InteractKey = KeyCode.E;
-
     private bool playerInRange;
+
+    public List<string> interactDialogue;
     public UnityEvent OnPlayerEnter; 
     public UnityEvent OnPlayerExit;
     public UnityEvent OnInteract; 
