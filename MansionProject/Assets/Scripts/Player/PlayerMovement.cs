@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 public class TopDownMovement : MonoBehaviour // modifierad skript av https://www.youtube.com/watch?v=HCaSnZvs90g
 {
-    private float playerSpeed;
+    [SerializeField] private float playerSpeed;
     private Vector2 playerInput;
     private Rigidbody2D rb;
   
