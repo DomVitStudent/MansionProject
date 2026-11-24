@@ -6,12 +6,15 @@ public class TopDownMovement : MonoBehaviour // modifierad skript av https://www
 {
     [SerializeField] private float playerSpeed;
     private Vector2 playerInput;
+    private bool movingEnabled = true;
     private Rigidbody2D rb;
   
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        Dialogue.OnDialogueStart += disableMovement; 
+        Dialogue.OnDialogueEnd += enableMovement;
     }
     private void Update()
     {
@@ -21,7 +24,14 @@ public class TopDownMovement : MonoBehaviour // modifierad skript av https://www
         playerInput.Normalize();
     }
     private void FixedUpdate()
-    {
-        rb.linearVelocity = playerInput * playerSpeed * Time.deltaTime;
+    { 
+        if (movingEnabled)
+        {
+            rb.linearVelocity = playerInput * playerSpeed * Time.deltaTime;
+        }
+      
     }
+    public void disableMovement() => movingEnabled = false;
+    public void enableMovement() => movingEnabled = true;
+
 }

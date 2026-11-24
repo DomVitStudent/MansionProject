@@ -14,7 +14,7 @@ public class Interactable : MonoBehaviour //gjord av edward
     public List<string> interactDialogue;
     public UnityEvent OnPlayerEnter; 
     public UnityEvent OnPlayerExit;
-    public UnityEvent OnInteract; 
+    public static Action<List<string>> OnInteract; 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -42,7 +42,7 @@ public class Interactable : MonoBehaviour //gjord av edward
     }
     private void Interact()
     {
-        OnInteract.Invoke();
+        OnInteract.Invoke(interactDialogue);
         Debug.Log("player interact");    
     }
 }
