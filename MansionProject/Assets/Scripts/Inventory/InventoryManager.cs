@@ -9,13 +9,18 @@ namespace Inventory
 
         void Update()
         {
-            if (Input.GetButtonDown("") && menuActivated == true)
+            if (Input.anyKeyDown)
+            {
+                Debug.Log("Input funkar");
+            }
+            
+            if (Input.GetKeyDown(KeyCode.Tab) && menuActivated == true)
             {
                 InventoryMenu.SetActive(false);
                 menuActivated = false;
                 Debug.Log("Inventory Menu Deactivated");
             }
-            else if (Input.GetButtonDown("") && menuActivated == false)
+            else if (Input.GetKeyDown(KeyCode.Tab) && menuActivated == false)
             {
                 InventoryMenu.SetActive(true);
                 menuActivated = true;
