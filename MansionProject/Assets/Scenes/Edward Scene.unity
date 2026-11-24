@@ -1358,11 +1358,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2048748505025613636, guid: d05fe6521c6b4854ca887a87e0317329, type: 3}
       propertyPath: interactDialogue.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2048748505025613636, guid: d05fe6521c6b4854ca887a87e0317329, type: 3}
       propertyPath: 'interactDialogue.Array.data[0]'
       value: Hahah hi this is test hahah dattebayo!!!
+      objectReference: {fileID: 0}
+    - target: {fileID: 2048748505025613636, guid: d05fe6521c6b4854ca887a87e0317329, type: 3}
+      propertyPath: 'interactDialogue.Array.data[1]'
+      value: "Ermmm nu gick du till n\xE4sta dialogue...?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2048748505025613636, guid: d05fe6521c6b4854ca887a87e0317329, type: 3}
+      propertyPath: 'interactDialogue.Array.data[2]'
+      value: "Detta \xE4r den sista what da faaaaakk!!"
       objectReference: {fileID: 0}
     - target: {fileID: 2048748505025613636, guid: d05fe6521c6b4854ca887a87e0317329, type: 3}
       propertyPath: OnInteract.m_PersistentCalls.m_Calls.Array.size
