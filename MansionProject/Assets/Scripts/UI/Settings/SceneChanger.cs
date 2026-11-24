@@ -8,9 +8,15 @@ public enum Scenes
 }
 public class SceneChanger : MonoBehaviour
 {
+    [Header("Scene you wanna change to")]
     [SerializeField] private Scenes targetScene;
     public void ChangeScene()
     {
         SceneManager.LoadScene(targetScene.ToString());
+    } 
+
+    public void ExitGame()
+    {
+        Application.Quit();
     }
 }
