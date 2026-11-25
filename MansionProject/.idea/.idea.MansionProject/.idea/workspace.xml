@@ -3,13 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5e18628f-2bcb-48b2-92e5-f0d32a989945" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MansionProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MansionProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/ItemSlots.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/ItemSlots.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Puzzle_Placeholders/CombinedPaper_PH.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Puzzle_Placeholders/CombinedPaper_PH.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Puzzle_Placeholders/CombinedPaper_PH.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Puzzle_Placeholders/CombinedPaper_PH.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Puzzle_Placeholders/RippedPaper1_PH.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Puzzle_Placeholders/RippedPaper1_PH.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Puzzle_Placeholders/RippedPaper1_PH.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Puzzle_Placeholders/RippedPaper1_PH.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Puzzle_Placeholders/RippedPaper2_PH.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Puzzle_Placeholders/RippedPaper2_PH.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Puzzle_Placeholders/RippedPaper2_PH.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Puzzle_Placeholders/RippedPaper2_PH.png.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +93,7 @@
       <workItem from="1795528934159" duration="1577000" />
       <workItem from="1795531841543" duration="3000" />
       <workItem from="1795532181399" duration="625000" />
-      <workItem from="1795599351894" duration="9176000" />
+      <workItem from="1795599351894" duration="10097000" />
     </task>
     <servers />
   </component>
