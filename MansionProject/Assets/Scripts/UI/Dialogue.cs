@@ -1,8 +1,10 @@
 using NUnit.Framework;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Dialogue : MonoBehaviour
 {
@@ -16,14 +18,16 @@ public class Dialogue : MonoBehaviour
     public static Action OnDialogueStart;
     public static Action OnDialogueEnd;
 
+
+    [Header("Typewriter effect")]
+    private float writerSpeed;
+
     [SerializeField] private TextMeshProUGUI TextBox;
     private void Start()
     {
-        Interactable.OnInteract += StartDialogue;
+        Interactable.OnStart += StartDialogue;
         gameObject.SetActive(false);
     }
-
-
 
     public void StartDialogue(List<string> dialogue)
     {
@@ -48,6 +52,19 @@ public class Dialogue : MonoBehaviour
             gameObject.SetActive(false);
         }
        
+    }  
+    IEnumerator TypeWritterEffect(string Dialogue)
+    { 
+        TextBox.text = Dialogue; 
+        TextBox.maxVisibleCharacters = 0;
+        int visibleCharacters = 0; 
+
+        for (int i = 0; i < dialogueList.Count; i++ )
+        { 
+
+            yield return new WaitForSeconds(writerSpeed);
+        }
+      
     }
     void Update()
     {

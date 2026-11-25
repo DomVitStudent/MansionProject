@@ -31,7 +31,13 @@ public class TopDownMovement : MonoBehaviour // modifierad skript av https://www
         }
       
     }
-    public void disableMovement() => movingEnabled = false;
+    public void disableMovement()
+    {
+        movingEnabled = false; 
+        rb.linearVelocity = Vector2.zero;
+    }
+        
+      
     public void enableMovement() => movingEnabled = true;
 
 }

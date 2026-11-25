@@ -10,12 +10,17 @@ public class Interactable : MonoBehaviour //gjord av edward
 {
     public List<string> interactDialogue;
 
-    public static Action<List<string>> OnInteract; 
-  
+    public static Action<List<string>> OnStart;
+    public UnityEvent OnInteract; 
+
 
     public void Interact()
     {
-        OnInteract.Invoke(interactDialogue);
+        if (interactDialogue != null && interactDialogue.Count > 0)
+        {
+            OnStart?.Invoke(interactDialogue);
+        }
+        OnInteract.Invoke();
         Debug.Log("player interact");    
     } 
 }
