@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5e18628f-2bcb-48b2-92e5-f0d32a989945" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MansionProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MansionProject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/ItemSlots.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/ItemSlots.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,6 +95,7 @@
       <workItem from="1795531841543" duration="3000" />
       <workItem from="1795532181399" duration="625000" />
       <workItem from="1795599351894" duration="10714000" />
+      <workItem from="1795615855075" duration="1928000" />
     </task>
     <servers />
   </component>

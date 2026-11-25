@@ -12,13 +12,12 @@ namespace Inventory
         public string itemDescription;
         public Sprite emptySprite;
         public bool hasItem;
-        
+        public bool isSelected;
         
         //Item Slot
         [SerializeField] private Image itemImage;
 
         public GameObject selectedShader;
-        public bool isSelected;
         
         private InventoryManager inventoryManager;
         
@@ -31,6 +30,7 @@ namespace Inventory
         public void Start()
         {
             inventoryManager = GameObject.Find("InventoryCanvas").GetComponent<InventoryManager>();
+            
         }
         
         public void AddItem(string itemName, string itemDescription, Sprite itemIcon)
