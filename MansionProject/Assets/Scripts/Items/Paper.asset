@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Paper
   m_EditorClassIdentifier: Assembly-CSharp::ItemBase
   itemName: Piece of Paper
-  itemDescription: 
-  itemIcon: {fileID: 0}
+  itemDescription: I can't read the paper
+  itemIcon: {fileID: 5708238958436364536, guid: 025828bcf4ff25741a0f83959335632f, type: 3}
