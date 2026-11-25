@@ -1,19 +1,18 @@
 using System;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PuzzleBase : MonoBehaviour
 {
-    public static Action OnPuzzleOpen;
-    public static Action OnPuzzleClose;
+   
 
-    private void OnEnable()
+    public UnityEvent OnPuzzleComplete;
+
+  
+
+    protected virtual void CompletePuzzle()
     {
-        Debug.Log("Opening puzzle");
-        OnPuzzleOpen.Invoke();
-    }
-    private void OnDisable()
-    {
-        OnPuzzleClose.Invoke();
+        OnPuzzleComplete.Invoke();
     }
 }

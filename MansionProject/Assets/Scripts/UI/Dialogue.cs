@@ -49,6 +49,7 @@ public class Dialogue : MonoBehaviour
         {
             currentIndex = 0;  
             OnDialogueEnd.Invoke();
+            Debug.Log("wtfend");
             gameObject.SetActive(false);
         }
        

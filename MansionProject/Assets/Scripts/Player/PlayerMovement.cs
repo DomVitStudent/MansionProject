@@ -15,8 +15,8 @@ public class PlayerMovement : MonoBehaviour // modifierad skript av https://www.
         rb = GetComponent<Rigidbody2D>();
         Dialogue.OnDialogueStart += disableMovement; 
         Dialogue.OnDialogueEnd += enableMovement;
-        PuzzleBase.OnPuzzleOpen += disableMovement; 
-        PuzzleBase.OnPuzzleClose += enableMovement;
+        PanelView.OnPanelOpen += disableMovement; 
+        PanelView.OnPanelClose += enableMovement;
     }
     private void Update()
     {
