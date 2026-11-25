@@ -1,18 +1,36 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.EventSystems;
 namespace Inventory
 {
-    public class ItemSlots : MonoBehaviour
+    public class ItemSlots : MonoBehaviour, IPointerClickHandler
     {
         //Data
         public string itemName;
         public Sprite itemIcon;
         public string itemDescription;
         public bool hasItem;
-
+        
+        
         //Item Slot
         [SerializeField] private Image itemImage;
+
+        public GameObject selectedShader;
+        public bool isSelected;
+        
+        private InventoryManager inventoryManager;
+        
+        //Description Slot
+        public Image itemDescriptionImage;
+        public TMP_Text itemDescriptionName;
+        public TMP_Text itemDescriptionText;
+        
+
+        public void Start()
+        {
+            inventoryManager = GameObject.Find("InventoryCanvas").GetComponent<InventoryManager>();
+        }
         
         public void AddItem(string itemName, string itemDescription, Sprite itemIcon)
         {
@@ -23,6 +41,23 @@ namespace Inventory
             itemImage.sprite = itemIcon;
         }
 
+        public void OnPointerClick(PointerEventData eventData)
+        {
+            if (eventData.button == PointerEventData.InputButton.Left)
+            {
+                OnLeftClick();
+            }
+        }
 
+        public void OnLeftClick()
+        {
+            inventoryManager.DeselectAllSlots();
+            selectedShader.SetActive(true);
+            isSelected = true;
+            itemDescriptionName.text = itemName;
+            itemDescriptionText.text = itemDescription;
+            itemDescriptionImage.sprite = itemIcon;
+        }
+        
     }
 }

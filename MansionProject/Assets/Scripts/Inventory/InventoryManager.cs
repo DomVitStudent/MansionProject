@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace Inventory
 {
@@ -43,7 +44,15 @@ namespace Inventory
             }
             
         }
-        
+
+        public void DeselectAllSlots()
+        {
+            for (int i = 0; i < itemSlots.Length; i++)
+            {
+                itemSlots[i].selectedShader.SetActive(false);
+                itemSlots[i].isSelected = false;
+            }
+        }
 
     }
     

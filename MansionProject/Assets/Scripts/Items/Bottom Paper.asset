@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 81ded8d25d3c92d4a9a0e176a90e6d27, type: 3}
-  m_Name: Right Paper
+  m_Name: Bottom Paper
   m_EditorClassIdentifier: Assembly-CSharp::ItemBase
   itemName: Torn Paper Piece
   itemDescription: A torn piece of paper. I can't make out the words on it.
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 3392062677753803607, guid: da10021cd1097734a9cfd34d4123c7b5, type: 3}

@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 81ded8d25d3c92d4a9a0e176a90e6d27, type: 3}
-  m_Name: Left Paper
+  m_Name: Top Paper
   m_EditorClassIdentifier: Assembly-CSharp::ItemBase
   itemName: Ripped Piece of Paper
   itemDescription: A ripped piece of paper. I can't seem to read what's on it.
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 8977058727753194845, guid: 40f4342214c5d4c42b0499e78a45e91d, type: 3}
