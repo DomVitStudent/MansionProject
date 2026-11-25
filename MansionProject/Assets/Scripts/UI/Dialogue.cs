@@ -53,7 +53,7 @@ public class Dialogue : MonoBehaviour
         }
        
     }
-    public void ShowText(string text)
+    public void ShowText(string text) //typewriter effect: https://blog.febucci.com/2026/05/how-to-make-a-typewriter-effect-in-unity-with-textmeshpro/
     {
         // Stop any existing typing before starting a new one
         if (_typingCoroutine != null)

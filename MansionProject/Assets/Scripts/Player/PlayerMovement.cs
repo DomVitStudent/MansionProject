@@ -2,11 +2,11 @@
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
-public class TopDownMovement : MonoBehaviour // modifierad skript av https://www.youtube.com/watch?v=HCaSnZvs90g
+public class PlayerMovement : MonoBehaviour // modifierad skript av https://www.youtube.com/watch?v=HCaSnZvs90g
 {
     [SerializeField] private float playerSpeed;
     private Vector2 playerInput;
-    private bool movingEnabled = true;
+    [SerializeField] private int movementLocks = 0;
     private Rigidbody2D rb;
   
 
@@ -15,6 +15,8 @@ public class TopDownMovement : MonoBehaviour // modifierad skript av https://www
         rb = GetComponent<Rigidbody2D>();
         Dialogue.OnDialogueStart += disableMovement; 
         Dialogue.OnDialogueEnd += enableMovement;
+        PuzzleBase.OnPuzzleOpen += disableMovement; 
+        PuzzleBase.OnPuzzleClose += enableMovement;
     }
     private void Update()
     {
@@ -25,7 +27,7 @@ public class TopDownMovement : MonoBehaviour // modifierad skript av https://www
     }
     private void FixedUpdate()
     { 
-        if (movingEnabled)
+        if (movementLocks == 0)
         {
             rb.linearVelocity = playerInput * playerSpeed * Time.deltaTime;
         }
@@ -33,11 +35,11 @@ public class TopDownMovement : MonoBehaviour // modifierad skript av https://www
     }
     public void disableMovement()
     {
-        movingEnabled = false; 
+        movementLocks ++; 
         rb.linearVelocity = Vector2.zero;
     }
         
       
-    public void enableMovement() => movingEnabled = true;
+    public void enableMovement() => movementLocks --;
 
 }
