@@ -10,6 +10,7 @@ namespace Inventory
         public string itemName;
         public Sprite itemIcon;
         public string itemDescription;
+        public Sprite emptySprite;
         public bool hasItem;
         
         
@@ -57,6 +58,10 @@ namespace Inventory
             itemDescriptionName.text = itemName;
             itemDescriptionText.text = itemDescription;
             itemDescriptionImage.sprite = itemIcon;
+            if (itemDescriptionImage.sprite == null)
+            {
+                itemDescriptionImage.sprite = emptySprite;
+            }
         }
         
     }
