@@ -6,6 +6,7 @@ namespace Inventory
     {
         public GameObject InventoryMenu;
         private bool menuActivated = false;
+        public ItemSlots[] itemSlots;
 
         void Update()
         {
@@ -28,6 +29,21 @@ namespace Inventory
             }
         }
 
+        public void AddItem(string itemName, string itemDescription, Sprite itemIcon)
+        {
+            for (int i = 0; i < itemSlots.Length; i++)
+            {
+
+                if (itemSlots[i].hasItem == false)
+                {
+                    itemSlots[i].AddItem(itemName, itemDescription, itemIcon);
+                    return;
+                }
+                
+            }
+            
+        }
+        
 
     }
     

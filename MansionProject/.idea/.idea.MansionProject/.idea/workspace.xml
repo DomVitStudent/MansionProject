@@ -4,6 +4,7 @@
     <list default="true" id="5e18628f-2bcb-48b2-92e5-f0d32a989945" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MansionProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MansionProject/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/InventoryManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/InventoryManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Items/ItemBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Items/ItemBase.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,6 +93,9 @@
       <workItem from="1795523156963" duration="3094000" />
       <workItem from="1795528519947" duration="319000" />
       <workItem from="1795528934159" duration="1577000" />
+      <workItem from="1795531841543" duration="3000" />
+      <workItem from="1795532181399" duration="625000" />
+      <workItem from="1795599351894" duration="1421000" />
     </task>
     <servers />
   </component>
