@@ -711,7 +711,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e0380199fb1e624f91616db2abc049b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
-  interactDialogue: []
+  interactDialogue:
+  - Test
   OnInteract:
     m_PersistentCalls:
       m_Calls:
