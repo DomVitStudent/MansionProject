@@ -1,8 +1,10 @@
 using NUnit.Framework;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Dialogue : MonoBehaviour
 {
@@ -16,14 +18,17 @@ public class Dialogue : MonoBehaviour
     public static Action OnDialogueStart;
     public static Action OnDialogueEnd;
 
+
+    [Header("Typewriter effect")]
+    [SerializeField] private float charactersPerSecond = 20f;
+    private Coroutine _typingCoroutine;
+
     [SerializeField] private TextMeshProUGUI TextBox;
     private void Start()
     {
-        Interactable.OnInteract += StartDialogue;
+        Interactable.OnStart += StartDialogue;
         gameObject.SetActive(false);
     }
-
-
 
     public void StartDialogue(List<string> dialogue)
     {
@@ -31,15 +36,14 @@ public class Dialogue : MonoBehaviour
         gameObject.SetActive(true);
         OnDialogueStart.Invoke();
         dialogueList = dialogue;
-        TextBox.text = dialogueList[currentIndex]; 
+        ShowText(dialogueList[currentIndex]);
     }
 
     private void NextDialogue()
     { 
         if (currentIndex < dialogueList.Count -1)
         {
-            currentIndex++;
-            TextBox.text = dialogueList[currentIndex];
+            ShowText(dialogueList[currentIndex]);
         } 
         else
         {
@@ -48,6 +52,37 @@ public class Dialogue : MonoBehaviour
             gameObject.SetActive(false);
         }
        
+    }
+    public void ShowText(string text)
+    {
+        // Stop any existing typing before starting a new one
+        if (_typingCoroutine != null)
+            StopCoroutine(_typingCoroutine);
+
+        // set the entire text once, but make it hidden
+        TextBox.text = text;
+        TextBox.maxVisibleCharacters = 0;
+
+        // Force TMP to parse the text and compute character count
+        TextBox.ForceMeshUpdate(); // might not be necessary in all cases
+
+        _typingCoroutine = StartCoroutine(TypeText());
+    }
+
+    private IEnumerator TypeText()
+    {
+        int totalCharacters = TextBox.textInfo.characterCount;
+        float delay = 1f / charactersPerSecond;
+
+        for (int i = 0; i < totalCharacters; i++)
+        {
+            TextBox.maxVisibleCharacters = i + 1;
+            yield return new WaitForSeconds(delay);
+        }
+
+        // Ensure everything is visible at the end
+        TextBox.maxVisibleCharacters = totalCharacters;
+        _typingCoroutine = null;
     }
     void Update()
     {
