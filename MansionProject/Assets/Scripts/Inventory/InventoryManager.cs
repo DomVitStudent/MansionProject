@@ -30,11 +30,6 @@ namespace Inventory
 
         void Update()
         {
-            if (Input.anyKeyDown)
-            {
-                Debug.Log("Input funkar");
-            }
-            
             if (Input.GetKeyDown(KeyCode.Tab) && menuActivated == true)
             {
                 InventoryMenu.SetActive(false);

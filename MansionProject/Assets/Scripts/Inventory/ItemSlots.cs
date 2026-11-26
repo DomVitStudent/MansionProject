@@ -7,17 +7,33 @@ namespace Inventory
     public class ItemSlots : MonoBehaviour, IPointerClickHandler
     {
         //Data
+<<<<<<< HEAD
+        public string itemName;
+        public Sprite itemIcon;
+        public string itemDescription;
+        public Sprite emptySprite;
+        public bool hasItem;
+        public bool isSelected;
+        
+        //Item Slot
+        [SerializeField] private Image itemImage;
+=======
         public ItemBase heldItem;
+>>>>>>> cb3cd94239007b524840d5fd138f6aca84bfa4a3
 
         [SerializeField] private Image itemImage;
         public GameObject selectedShader;
-        public bool isSelected;
         
         private InventoryManager inventoryManager;
         
         public void Start()
         {
+<<<<<<< HEAD
+            inventoryManager = GameObject.Find("InventoryCanvas").GetComponent<InventoryManager>();
+            
+=======
             inventoryManager = GameObject.Find("InventoryCanvas").GetComponent<InventoryManager>(); 
+>>>>>>> cb3cd94239007b524840d5fd138f6aca84bfa4a3
         }
         
         public void AddItem(ItemBase item)
@@ -35,6 +51,19 @@ namespace Inventory
         }
 
         public void OnLeftClick()
+<<<<<<< HEAD
+        {
+            inventoryManager.DeselectAllSlots();
+            selectedShader.SetActive(true);
+            isSelected = true;
+            itemDescriptionName.text = itemName;
+            itemDescriptionText.text = itemDescription;
+            itemDescriptionImage.sprite = itemIcon;
+            if (itemDescriptionImage.sprite == null)
+            {
+                itemDescriptionImage.sprite = emptySprite;
+            }
+=======
         { 
             if (heldItem != null)
             {
@@ -45,6 +74,7 @@ namespace Inventory
                 inventoryManager.ShowItem(heldItem);
             }
           
+>>>>>>> cb3cd94239007b524840d5fd138f6aca84bfa4a3
         }
         
     }
