@@ -9,7 +9,6 @@ namespace Inventory
 {
     public class InventoryManager : MonoBehaviour
     {
-        public GameObject InventoryMenu;
         private bool menuActivated = false;
         public ItemSlots[] itemSlots;
 
@@ -26,22 +25,6 @@ namespace Inventory
                 AddItem(item);
             }
      
-        }
-
-        void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.Tab) && menuActivated == true)
-            {
-                InventoryMenu.SetActive(false);
-                menuActivated = false;
-                Debug.Log("Inventory Menu Deactivated");
-            }
-            else if (Input.GetKeyDown(KeyCode.Tab) && menuActivated == false)
-            {
-                InventoryMenu.SetActive(true);
-                menuActivated = true;
-                Debug.Log("Inventory Menu Activated");
-            }
         }
 
         public void AddItem(ItemBase item)
