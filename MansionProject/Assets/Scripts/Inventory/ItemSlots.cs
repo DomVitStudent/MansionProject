@@ -1,12 +1,13 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 namespace Inventory
 {
     public class ItemSlots : MonoBehaviour, IPointerClickHandler
     {
         //Data
+<<<<<<< HEAD
         public string itemName;
         public Sprite itemIcon;
         public string itemDescription;
@@ -16,30 +17,29 @@ namespace Inventory
         
         //Item Slot
         [SerializeField] private Image itemImage;
+=======
+        public ItemBase heldItem;
+>>>>>>> cb3cd94239007b524840d5fd138f6aca84bfa4a3
 
+        [SerializeField] private Image itemImage;
         public GameObject selectedShader;
         
         private InventoryManager inventoryManager;
         
-        //Description Slot
-        public Image itemDescriptionImage;
-        public TMP_Text itemDescriptionName;
-        public TMP_Text itemDescriptionText;
-        
-
         public void Start()
         {
+<<<<<<< HEAD
             inventoryManager = GameObject.Find("InventoryCanvas").GetComponent<InventoryManager>();
             
+=======
+            inventoryManager = GameObject.Find("InventoryCanvas").GetComponent<InventoryManager>(); 
+>>>>>>> cb3cd94239007b524840d5fd138f6aca84bfa4a3
         }
         
-        public void AddItem(string itemName, string itemDescription, Sprite itemIcon)
+        public void AddItem(ItemBase item)
         {
-            this.itemName = itemName;
-            this.itemDescription = itemDescription;
-            this.itemIcon = itemIcon;
-
-            itemImage.sprite = itemIcon;
+            heldItem = item;
+            itemImage.sprite = item.itemIcon;
         }
 
         public void OnPointerClick(PointerEventData eventData)
@@ -51,6 +51,7 @@ namespace Inventory
         }
 
         public void OnLeftClick()
+<<<<<<< HEAD
         {
             inventoryManager.DeselectAllSlots();
             selectedShader.SetActive(true);
@@ -62,6 +63,18 @@ namespace Inventory
             {
                 itemDescriptionImage.sprite = emptySprite;
             }
+=======
+        { 
+            if (heldItem != null)
+            {
+                inventoryManager.DeselectAllSlots();
+                selectedShader.SetActive(true);
+                isSelected = true;
+
+                inventoryManager.ShowItem(heldItem);
+            }
+          
+>>>>>>> cb3cd94239007b524840d5fd138f6aca84bfa4a3
         }
         
     }
