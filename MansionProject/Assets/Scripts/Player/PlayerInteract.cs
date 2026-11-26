@@ -29,7 +29,6 @@ public class PlayerInteract : MonoBehaviour
     { 
         if (collision.GetComponent<Interactable>() != null)
         {
-            Debug.Log("enter");
             OnPlayerEnter.Invoke();
             currentTarget = collision.GetComponent<Interactable>();
         }
@@ -40,7 +39,6 @@ public class PlayerInteract : MonoBehaviour
     {
         if (currentTarget != null)
         {
-            Debug.Log("Leave");
             currentTarget = null;
             OnPlayerExit.Invoke();
           

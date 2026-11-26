@@ -21,6 +21,5 @@ public class Interactable : MonoBehaviour //gjord av edward
             OnStart?.Invoke(interactDialogue);
         }
         OnInteract.Invoke();
-        Debug.Log("player interact");    
     } 
 }

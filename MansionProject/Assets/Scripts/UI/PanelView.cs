@@ -7,7 +7,7 @@ public class PanelView : MonoBehaviour
     public static Action OnPanelClose;
     private void OnEnable()
     {
-        Debug.Log("Opening puzzle");
+  
         OnPanelOpen.Invoke();
     }
     private void OnDisable()
