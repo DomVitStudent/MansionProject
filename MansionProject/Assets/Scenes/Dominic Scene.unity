@@ -675,6 +675,12 @@ MonoBehaviour:
   - {fileID: 2106384026}
   - {fileID: 1554027652}
   - {fileID: 1959906402}
+  ownedItems:
+  - {fileID: 11400000, guid: 99e1502f2c057dd4d90e9def27e1029b, type: 2}
+  - {fileID: 11400000, guid: 7c3eb55096c2f0947ae3935f0d74ce68, type: 2}
+  itemDescriptionImage: {fileID: 1321131694}
+  itemDescriptionName: {fileID: 427769177}
+  itemDescriptionText: {fileID: 249057533}
 --- !u!1 &427769175
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,8 +5,8 @@ using UnityEngine.Events;
 
 public class PuzzleBase : MonoBehaviour
 {
-   
 
+    [SerializeField] private ItemBase rewardItem;
     public UnityEvent OnPuzzleComplete;
 
   
