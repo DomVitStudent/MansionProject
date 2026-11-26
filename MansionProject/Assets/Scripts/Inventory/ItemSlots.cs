@@ -1,44 +1,29 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 namespace Inventory
 {
     public class ItemSlots : MonoBehaviour, IPointerClickHandler
     {
         //Data
-        public string itemName;
-        public Sprite itemIcon;
-        public string itemDescription;
-        public bool hasItem;
-        
-        
-        //Item Slot
-        [SerializeField] private Image itemImage;
+        public ItemBase heldItem;
 
+        [SerializeField] private Image itemImage;
         public GameObject selectedShader;
         public bool isSelected;
         
         private InventoryManager inventoryManager;
         
-        //Description Slot
-        public Image itemDescriptionImage;
-        public TMP_Text itemDescriptionName;
-        public TMP_Text itemDescriptionText;
-        
-
         public void Start()
         {
-            inventoryManager = GameObject.Find("InventoryCanvas").GetComponent<InventoryManager>();
+            inventoryManager = GameObject.Find("InventoryCanvas").GetComponent<InventoryManager>(); 
         }
         
-        public void AddItem(string itemName, string itemDescription, Sprite itemIcon)
+        public void AddItem(ItemBase item)
         {
-            this.itemName = itemName;
-            this.itemDescription = itemDescription;
-            this.itemIcon = itemIcon;
-
-            itemImage.sprite = itemIcon;
+            heldItem = item;
+            itemImage.sprite = item.itemIcon;
         }
 
         public void OnPointerClick(PointerEventData eventData)
@@ -50,13 +35,16 @@ namespace Inventory
         }
 
         public void OnLeftClick()
-        {
-            inventoryManager.DeselectAllSlots();
-            selectedShader.SetActive(true);
-            isSelected = true;
-            itemDescriptionName.text = itemName;
-            itemDescriptionText.text = itemDescription;
-            itemDescriptionImage.sprite = itemIcon;
+        { 
+            if (heldItem != null)
+            {
+                inventoryManager.DeselectAllSlots();
+                selectedShader.SetActive(true);
+                isSelected = true;
+
+                inventoryManager.ShowItem(heldItem);
+            }
+          
         }
         
     }

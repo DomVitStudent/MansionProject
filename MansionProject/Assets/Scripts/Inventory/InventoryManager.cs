@@ -1,5 +1,9 @@
+using NUnit.Framework;
+using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 namespace Inventory
 {
@@ -8,6 +12,21 @@ namespace Inventory
         public GameObject InventoryMenu;
         private bool menuActivated = false;
         public ItemSlots[] itemSlots;
+
+        [SerializeField] private List<ItemBase> ownedItems = new List<ItemBase>();
+
+        public Image itemDescriptionImage;
+        public TMP_Text itemDescriptionName;
+        public TMP_Text itemDescriptionText;
+
+        private void Start()
+        { 
+            foreach (ItemBase item in ownedItems)
+            {
+                AddItem(item);
+            }
+     
+        }
 
         void Update()
         {
@@ -30,14 +49,14 @@ namespace Inventory
             }
         }
 
-        public void AddItem(string itemName, string itemDescription, Sprite itemIcon)
+        public void AddItem(ItemBase item)
         {
             for (int i = 0; i < itemSlots.Length; i++)
             {
 
-                if (itemSlots[i].hasItem == false)
+                if (itemSlots[i].heldItem == null)
                 {
-                    itemSlots[i].AddItem(itemName, itemDescription, itemIcon);
+                    itemSlots[i].AddItem(item);
                     return;
                 }
                 
@@ -52,6 +71,12 @@ namespace Inventory
                 itemSlots[i].selectedShader.SetActive(false);
                 itemSlots[i].isSelected = false;
             }
+        } 
+        public void ShowItem(ItemBase item)
+        {
+            itemDescriptionName.text = item.itemName;
+            itemDescriptionText.text = item.itemDescription;
+            itemDescriptionImage.sprite = item.itemIcon;
         }
 
     }
