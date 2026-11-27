@@ -2,6 +2,7 @@ using NUnit.Framework;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -43,7 +44,9 @@ public class Dialogue : MonoBehaviour
     { 
         if (currentIndex < dialogueList.Count -1)
         {
-            ShowText(dialogueList[currentIndex]);
+            currentIndex++;
+            ShowText(dialogueList[currentIndex]); 
+         
         } 
         else
         {
@@ -53,8 +56,13 @@ public class Dialogue : MonoBehaviour
         }
        
     }
-    public void ShowText(string text) //typewriter effect: https://blog.febucci.com/2026/05/how-to-make-a-typewriter-effect-in-unity-with-textmeshpro/
+    public void InteractDialogue(string Text )
     {
+        List<string> dialouge = Text.Split(" : ").ToList(); //denna är lite buggad men låter ha flera lines för interact
+        StartDialogue(dialouge);
+    }
+    private void ShowText(string text) //typewriter effect: https://blog.febucci.com/2026/05/how-to-make-a-typewriter-effect-in-unity-with-textmeshpro/
+    { 
         // Stop any existing typing before starting a new one
         if (_typingCoroutine != null)
             StopCoroutine(_typingCoroutine);
@@ -84,6 +92,7 @@ public class Dialogue : MonoBehaviour
         TextBox.maxVisibleCharacters = totalCharacters;
         _typingCoroutine = null;
     }
+  
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E) ||  Input.GetKeyDown(KeyCode.Mouse0))
